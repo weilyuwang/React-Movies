@@ -1,13 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 // config
-import {
-    API_URL,
-    API_KEY,
-    IMAGE_BASE_URL,
-    POSTER_SIZE,
-    BACKDROP_SIZE,
-} from "../config";
+import { IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from "../config";
 
 // import components
 import HeroImage from "./elements/HeroImage";
