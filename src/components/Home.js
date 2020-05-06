@@ -25,9 +25,18 @@ const Home = () => {
 
     console.log(state);
 
+    if (error) return <div>Something went wrong</div>;
+    if (!state.movies[0]) return <Spinner />;
+
+    const { backdrop_path, original_title, overview } = state.heroImage;
+    console.log(`${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop_path}`);
     return (
         <>
-            <HeroImage />
+            <HeroImage
+                image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop_path}`}
+                title={original_title}
+                text={overview}
+            />
             <SearchBar />
             <Grid />
             <MovieThumb />
