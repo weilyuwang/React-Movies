@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledSpinner = styled.div`
     border: 5px solid #f3f3f3;
-    border-top: 5px solid #16d47b;
+    border-top: 5px solid #78c4c2;
     border-radius: 50%;
     width: 50px;
     height: 50px;
