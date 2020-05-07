@@ -8,7 +8,14 @@ import Actor from "./elements/Actor";
 import Grid from "./elements/Grid";
 import Spinner from "./elements/Spinner";
 
+// custom hook
+import { useMovieFetch } from "./hooks/useMovieFetch";
+
 const Movie = ({ movieId }) => {
+    const [state, loading, error] = useMovieFetch(movieId);
+
+    console.log(state);
+
     return (
         <>
             <Navigation />
