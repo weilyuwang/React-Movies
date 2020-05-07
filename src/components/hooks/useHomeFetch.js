@@ -11,6 +11,9 @@ export const useHomeFetch = () => {
         setError(false);
         setLoading(true);
 
+        // does the endpoint string contain substr "page" ?
+        const isLoadMore = endpoint.search("page");
+
         try {
             // fetch() is async, json() is also async function
             const result = await (await fetch(endpoint)).json();
@@ -26,7 +29,10 @@ export const useHomeFetch = () => {
 
             setState((prev) => ({
                 ...prev,
-                movies: [...result.results],
+                movies:
+                    isLoadMore !== -1
+                        ? [...prev.movies, ...result.results]
+                        : [...result.results],
                 heroImage: prev.heroImage || result.results[0], // take the previous state's heroImage if exists, otherwise take the first result image
                 currentPage: result.page,
                 totalPages: result.total_pages,
