@@ -16,15 +16,17 @@ const Movie = ({ movieId }) => {
 
     console.log(state);
 
+    if (error) return <div>Something went wrong!</div>;
+    if (loading) return <Spinner />;
+
     return (
         <>
-            <Navigation />
-            <MovieInfo />
+            <Navigation movie={state.original_title} />
+            <MovieInfo movie={state} />
             <MovieInfoBar />
             <Grid>
                 <Actor />
             </Grid>
-            <Spinner />
         </>
     );
 };
