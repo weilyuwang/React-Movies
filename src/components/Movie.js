@@ -17,7 +17,7 @@ const Movie = ({ movieId }) => {
     console.log(state);
 
     if (error) return <div>Something went wrong!</div>;
-    if (loading) return <Spinner />;
+    if (loading || !state.original_title) return <Spinner />;
 
     return (
         <>
