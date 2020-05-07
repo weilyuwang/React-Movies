@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "@reach/router";
+
 import styled from "styled-components";
 
 export const StyledMovieThumb = styled.div`
@@ -37,10 +39,12 @@ export const StyledMovieThumb = styled.div`
     }
 `;
 
-const MovieThumb = ({ image, clickable, movieId, movieName }) => (
+const MovieThumb = ({ image, clickable, movieId }) => (
     <StyledMovieThumb>
         {clickable ? (
-            <img className="clickable" src={image} alt="moviethumb" />
+            <Link to={`/${movieId}`}>
+                <img className="clickable" src={image} alt="moviethumb" />
+            </Link>
         ) : (
             <img src={image} alt="moviethumb" />
         )}

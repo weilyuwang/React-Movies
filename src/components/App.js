@@ -3,7 +3,11 @@ import { createGlobalStyle } from "styled-components";
 
 import Header from "./elements/Header";
 
+import Movie from "./Movie";
+import NotFound from "./NotFound";
 import Home from "./Home";
+
+import { Router } from "@reach/router";
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -16,7 +20,12 @@ const GlobalStyle = createGlobalStyle`
 const App = () => (
     <>
         <Header />
-        <Home />
+        <Router>
+            <Home path="/" />
+            <Movie path="/:movieId" />
+            <NotFound default />
+        </Router>
+
         <GlobalStyle />
     </>
 );
