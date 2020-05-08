@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Deploy: Netlify
+![App Demo](gif/movies-demo.gif)
 
-check live app @
+### Deploy: now.sh
+
+check live app @https://weilyu-movies.now.sh
