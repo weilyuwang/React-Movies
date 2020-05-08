@@ -41,8 +41,21 @@ export const useMovieFetch = (movieId) => {
     }, [movieId]);
 
     useEffect(() => {
-        fetchData();
-    }, [fetchData]);
+        // dynamically update movieId -> localStorage[movieId]
+        if (localStorage[movieId]) {
+            // console.log("Grabbing from local storage");
+            setState(JSON.parse(localStorage[movieId]));
+            setLoading(false);
+        } else {
+            // console.log("Grabbing from API");
+            fetchData();
+        }
+    }, [fetchData, movieId]);
+
+    useEffect(() => {
+        // console.log(state);
+        localStorage.setItem(movieId, JSON.stringify(state));
+    }, [movieId, state]);
 
     return [state, loading, error];
 };
