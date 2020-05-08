@@ -6,6 +6,8 @@ import MovieThumb from "./MovieThumb";
 
 import styled from "styled-components";
 
+import PropTypes from "prop-types";
+
 import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from "../../config";
 
 export const StyledMovieInfo = styled.div`
@@ -142,5 +144,9 @@ const MovieInfo = ({ movie }) => (
         </div>
     </StyledMovieInfo>
 );
+
+MovieInfo.propTypes = {
+    movie: PropTypes.object,
+};
 
 export default MovieInfo;

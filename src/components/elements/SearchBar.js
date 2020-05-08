@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import FontAwesome from "react-fontawesome";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledSearchBar = styled.div`
     width: 100%;
@@ -57,8 +58,6 @@ const SearchBar = ({ callback }) => {
     const [state, setState] = useState("");
     const timeOut = useRef(null);
 
-    console.log(state);
-
     const doSearch = (event) => {
         const { value } = event.target;
 
@@ -82,6 +81,10 @@ const SearchBar = ({ callback }) => {
             </StyledSearchBarContent>
         </StyledSearchBar>
     );
+};
+
+SearchBar.propTypes = {
+    callback: PropTypes.func,
 };
 
 export default SearchBar;

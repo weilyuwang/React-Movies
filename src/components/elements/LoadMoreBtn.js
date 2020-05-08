@@ -2,6 +2,8 @@ import React from "react";
 
 import styled from "styled-components";
 
+import PropTypes from "prop-types";
+
 const StyledLoadMoreBtn = styled.button`
     background: #000;
     width: 25%;
@@ -29,5 +31,10 @@ const LoadMoreBtn = ({ text, callback }) => (
         {text}
     </StyledLoadMoreBtn>
 );
+
+LoadMoreBtn.propTypes = {
+    text: PropTypes.string,
+    callback: PropTypes.func,
+};
 
 export default LoadMoreBtn;

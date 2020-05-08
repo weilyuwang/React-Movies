@@ -8,14 +8,13 @@ import Actor from "./elements/Actor";
 import Grid from "./elements/Grid";
 import Spinner from "./elements/Spinner";
 
+import PropTypes from "prop-types";
+
 // custom hook
 import { useMovieFetch } from "./hooks/useMovieFetch";
 
 const Movie = ({ movieId }) => {
     const [state, loading, error] = useMovieFetch(movieId);
-
-    console.log(state);
-
     if (error) return <div>Something went wrong!</div>;
     if (loading || !state.original_title) return <Spinner />;
 
@@ -35,6 +34,10 @@ const Movie = ({ movieId }) => {
             </Grid>
         </>
     );
+};
+
+Movie.propTypes = {
+    movieId: PropTypes.string,
 };
 
 export default Movie;

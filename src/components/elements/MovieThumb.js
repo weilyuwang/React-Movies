@@ -4,6 +4,8 @@ import { Link } from "@reach/router";
 
 import styled from "styled-components";
 
+import PropTypes from "prop-types";
+
 export const StyledMovieThumb = styled.div`
     img {
         width: 100%;
@@ -50,5 +52,11 @@ const MovieThumb = ({ image, clickable, movieId }) => (
         )}
     </StyledMovieThumb>
 );
+
+MovieThumb.propTypes = {
+    image: PropTypes.string,
+    clickable: PropTypes.bool,
+    movieId: PropTypes.number,
+};
 
 export default MovieThumb;

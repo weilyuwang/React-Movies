@@ -2,6 +2,8 @@ import React from "react";
 
 import styled from "styled-components";
 
+import PropTypes from "prop-types";
+
 // ******************************** Styled Components  ********************************
 const StyledHeroImage = styled.div`
     background: ${(props) =>
@@ -85,5 +87,11 @@ const HeroImage = ({ image, title, text }) => (
         </div>
     </StyledHeroImage>
 );
+
+HeroImage.propTypes = {
+    image: PropTypes.string,
+    title: PropTypes.string,
+    text: PropTypes.string,
+};
 
 export default HeroImage;
